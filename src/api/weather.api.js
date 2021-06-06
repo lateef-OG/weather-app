@@ -6,7 +6,9 @@ export const getWeather = async (format) => {
     .then((res) => res)
     .catch((err) => null);
 
-  let qs = [`units=${format}`, "APPID=75f972b80e26f14fe6c920aa6a85ad57&cnt=40"];
+  let api_key = process.env.REACT_APP_API_KEY;
+
+  let qs = [`units=${format}`, `appid=${api_key}`];
   if (coord) qs.unshift(`lat=${coord.lat}&lon=${coord.lon}`);
   else qs.unshift("q=Lagos,ng");
 
