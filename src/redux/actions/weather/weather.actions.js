@@ -1,15 +1,15 @@
-import { getWeather } from "../../../api/weather.api"
+import { getWeather } from "../../../api"
 import { formatWeatherData } from "../../../util/helper"
 import { FETCH_WEATHER_DATA, LOADING_STATE, SET_TEMP_FORMAT } from "../actionTypes"
 
-const getWeatherData = (payload) => {
+export const getWeatherData = (payload) => {
     return {
         type: FETCH_WEATHER_DATA,
         payload
     }
 }
 
-const setLoadingState = (payload) => {
+export const setLoadingState = (payload) => {
     return {
         type: LOADING_STATE,
         payload
@@ -36,6 +36,7 @@ export const fetchWeatherData = (format) => async dispatch => {
                 city: response.city,
                 weather: dayList,
             }
+            console.log(data);
             dispatch(getWeatherData(data));
         }
     })

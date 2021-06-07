@@ -89,7 +89,7 @@ const Home = () => {
             direction="column"
             className={classes.loadingContainer}
           >
-            <CircularProgress />
+            <CircularProgress data-testid="spinner" />
           </Grid>
         )}
         <Typography component="div">
@@ -150,6 +150,7 @@ const Home = () => {
                   ref={(ref) => {
                     refArray.current[index] = ref;
                   }}
+                  data-testid="weather-card"
                 />
               );
             })}

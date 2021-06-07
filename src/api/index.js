@@ -1,1 +1,1 @@
-export { getWeather } from './people.api';
+export { getWeather } from './weather.api';
