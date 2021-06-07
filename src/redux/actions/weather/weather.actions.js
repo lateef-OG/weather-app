@@ -36,7 +36,6 @@ export const fetchWeatherData = (format) => async dispatch => {
                 city: response.city,
                 weather: dayList,
             }
-            console.log(data);
             dispatch(getWeatherData(data));
         }
     })
