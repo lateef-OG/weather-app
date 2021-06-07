@@ -29,7 +29,7 @@ export const fetchWeatherData = (format) => async dispatch => {
     .then(response => {
         dispatch(setLoadingState(false));
         if(response.hasOwnProperty('error')){
-            console.log(response.error)
+            alert(response.error)
         } else {
             const dayList = formatWeatherData(response.list);
             const data = {
